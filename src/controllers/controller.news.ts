@@ -1,7 +1,11 @@
 import { Request, Response } from "express";
 import { NewsServices } from "../services/services.main";
 
-const topController = (req: Request, res: Response) => {};
+const topController = async (req: Request, res: Response) => {
+  const resData = await NewsServices.getTop();
+
+  res.status(200).json(resData);
+};
 
 const newController = (req: Request, res: Response) => {};
 

@@ -11,7 +11,12 @@ const NEW_STORIES = `${HACKER_API}/newstories.json`;
 const BEST_STORIES = `${HACKER_API}/beststories.json`;
 
 export const api = {
-  endpoint: { top: TOP_STORIES, new: NEW_STORIES, best: BEST_STORIES },
+  endpoint: {
+    base: HACKER_API,
+    top: TOP_STORIES,
+    new: NEW_STORIES,
+    best: BEST_STORIES,
+  },
 };
 
 export const config = {
