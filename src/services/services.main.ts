@@ -30,7 +30,7 @@ export class NewsServices {
 
       return { results: newsData };
     } catch (e: any) {
-      Logging.error(e.message);
+      throw Error(`Server Error: ${e.message}`);
     }
   }
 }
