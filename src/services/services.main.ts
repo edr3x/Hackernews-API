@@ -2,6 +2,23 @@ import { api } from "../config/config";
 import axios from "axios";
 import Logging from "../library/logger";
 
+const newsData = async (resNum: Array<number>) => {
+  let reqUrl: Array<string> = [];
+  resNum.map((e: number) => {
+    const urlD = `${api.endpoint.base}/item/${e}.json`;
+    reqUrl.push(urlD);
+  });
+
+  const mainData: Array<any> = [];
+  for (let url of reqUrl) {
+    const zz = await axios.get(url);
+    const data = zz.data;
+    mainData.push(data);
+  }
+
+  return mainData;
+};
+
 export class NewsServices {
   public static async getTop(num: number) {
     const url = api.endpoint.top;
@@ -14,23 +31,13 @@ export class NewsServices {
         dataUrl.push(res[i]);
       }
 
-      let reqUrl: Array<string> = []; //* every url request
-      dataUrl.map((elem: any) => {
-        const urls = `${api.endpoint.base}/item/${elem}.json`;
-        reqUrl.push(urls);
-      });
+      const resss = await newsData(dataUrl);
 
-      const newsData = [];
-      for (let url of reqUrl) {
-        const zz = await axios.get(url);
-        const data = zz.data;
-        newsData.push(data);
-      }
-      console.log(newsData);
-
-      return { results: newsData };
+      return { results: resss };
     } catch (e: any) {
       throw Error(`Server Error: ${e.message}`);
     }
   }
+
+  public static async getNewNews(num: number) {}
 }
