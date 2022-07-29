@@ -73,7 +73,7 @@ export class NewsServices {
       const res = await axios.get(url);
       const ress = res.data;
 
-      return { ress };
+      return { result: ress };
     } catch (e: any) {
       throw Error(`Server Error: ${e.message}`);
     }
