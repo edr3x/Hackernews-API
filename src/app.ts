@@ -30,7 +30,7 @@ app.get("/test", (_req: Request, res: Response) => {
 
 //* Routes
 import mainRoute from "./routes/route.main";
-app.use("/api/v0", mainRoute); //* Api version 0
+app.use("/api", mainRoute);
 
 //* Server Start
 const port = config.server.port;

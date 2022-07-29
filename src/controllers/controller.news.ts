@@ -37,4 +37,16 @@ const bestController = async (req: Request, res: Response) => {
   }
 };
 
-export default { topController, newController, bestController };
+const particular = async (req: Request, res: Response) => {
+  try {
+    const id: number = parseInt(req.params.id);
+
+    const resData = await NewsServices.getParticular(id);
+
+    res.status(200).json(resData);
+  } catch (e) {
+    res.status(404).json({ error: `${e}` });
+  }
+};
+
+export default { topController, newController, bestController, particular };

@@ -8,7 +8,7 @@ const newsData = async (num: number, url: string) => {
     const res = resp.data;
 
     let dataUrl: Array<number> = [];
-    for (let i = 0; i <= num; i++) {
+    for (let i = 1; i <= num; i++) {
       dataUrl.push(res[i]);
     }
 
@@ -61,6 +61,19 @@ export class NewsServices {
       const res = await newsData(num, url);
 
       return { results: res };
+    } catch (e: any) {
+      throw Error(`Server Error: ${e.message}`);
+    }
+  }
+
+  public static async getParticular(id: number) {
+    try {
+      const url = `${api.endpoint.base}/item/${id}.json`;
+
+      const res = await axios.get(url);
+      const ress = res.data;
+
+      return { ress };
     } catch (e: any) {
       throw Error(`Server Error: ${e.message}`);
     }
