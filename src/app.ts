@@ -25,12 +25,12 @@ app.use(express.json());
 
 //* Test
 app.get("/test", (_req: Request, res: Response) => {
-  res.status(200).json({ message: "Success" });
+  res.status(200).json({ message: "Test Success" });
 });
 
 //* Routes
 import mainRoute from "./routes/route.main";
-app.use("/api", mainRoute);
+app.use("/api/v0", mainRoute); //* Api version 0
 
 //* Server Start
 const port = config.server.port;
