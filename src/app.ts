@@ -25,9 +25,9 @@ app.use(express.json());
 
 //* Test
 
-app.get("/", (_req: Request, res: Response) => {
-  res.status(200).json({ message: "Test Success" });
-});
+// app.get("/", (_req: Request, res: Response) => {
+//   res.status(200).json({ message: "Test Success" });
+// });
 
 //* Routes
 import mainRoute from "./routes/route.main";
