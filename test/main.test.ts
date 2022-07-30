@@ -8,6 +8,12 @@ import mainRoute from "../src/routes/route.main";
 app.use("/api", mainRoute);
 
 describe("Main Route Test", () => {
+  test("GET /", async () => {
+    const response = await request(app).get("/");
+    expect(response.status).toBe(200);
+    expect(JSON.parse(response.text).message).toBe("Test Success");
+  });
+
   test("GET /api/top/:num", async () => {
     const response = await request(app).get("/api/top/2");
     expect(response.status).toBe(200);
