@@ -9,7 +9,7 @@ const topController = async (req: Request, res: Response) => {
 
     res.status(200).json(resData);
   } catch (e) {
-    res.status(404).json({ error: `${e}` });
+    res.status(404).json({ success: false, error: `${e}` });
   }
 };
 
@@ -21,7 +21,7 @@ const newController = async (req: Request, res: Response) => {
 
     res.status(200).json(resData);
   } catch (e) {
-    res.status(404).json({ error: `${e}` });
+    res.status(404).json({ success: false, error: `${e}` });
   }
 };
 
@@ -33,7 +33,7 @@ const bestController = async (req: Request, res: Response) => {
 
     res.status(200).json(resData);
   } catch (e) {
-    res.status(404).json({ error: `${e}` });
+    res.status(404).json({ success: false, error: `${e}` });
   }
 };
 
@@ -45,7 +45,7 @@ const particular = async (req: Request, res: Response) => {
 
     res.status(200).json(resData);
   } catch (e) {
-    res.status(404).json({ error: `${e}` });
+    res.status(404).json({ success: false, error: `${e}` });
   }
 };
 

@@ -37,7 +37,7 @@ export class NewsServices {
     try {
       const res = await newsData(num, url);
 
-      return { results: res };
+      return { success: true, results: res };
     } catch (e: any) {
       throw Error(`Server Error: ${e.message}`);
     }
@@ -49,7 +49,7 @@ export class NewsServices {
     try {
       const res = await newsData(num, url);
 
-      return { results: res };
+      return { success: true, results: res };
     } catch (e: any) {
       throw Error(`Server Error: ${e.message}`);
     }
@@ -60,7 +60,7 @@ export class NewsServices {
     try {
       const res = await newsData(num, url);
 
-      return { results: res };
+      return { success: true, results: res };
     } catch (e: any) {
       throw Error(`Server Error: ${e.message}`);
     }
@@ -73,7 +73,7 @@ export class NewsServices {
       const res = await axios.get(url);
       const ress = res.data;
 
-      return { result: ress };
+      return { success: true, result: ress };
     } catch (e: any) {
       throw Error(`Server Error: ${e.message}`);
     }
