@@ -7,7 +7,7 @@
     "build": "tsc",
     "watch": "tsc --watch",
     "dev": "nodemon .",
-    "start": "node .",
+    "start": "node dist/app.js",
     "test": "jest"
   },
   "keywords": [],
