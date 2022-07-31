@@ -33,3 +33,7 @@
   ```
 
   - "kids" contains array of top level comment id's, these comments can be fetched using `GET` : `/api/particular/:id` operation, can be done in nested manner!
+
+### You can host your own or use the provided one i.e. `https://hack-middleware.herokuapp.com`
+
+- example: `https://hack-middleware.herokuapp.com/api/top/10`
