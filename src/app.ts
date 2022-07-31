@@ -25,14 +25,14 @@ app.use(express.json());
 
 //* Test
 
-// app.get("/", (_req: Request, res: Response) => {
-//   res.status(200).json({ message: "Test Success" });
-// });
+app.get("/", (_req: Request, res: Response) => {
+  res.status(200).json({ message: "Test Success" });
+});
 
 //* Routes
 import mainRoute from "./routes/route.main";
 app.use("/api", mainRoute);
 
 //* Server Start
-const port = config.server.port;
-app.listen(8080, () => Logger.info(`startd at port: ${8080}`));
+const port = process.env.PORT || config.server.port;
+app.listen(port, () => Logger.info(`started at port: ${port}`));
