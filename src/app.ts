@@ -35,4 +35,4 @@ app.use("/api", mainRoute);
 
 //* Server Start
 const port = process.env.PORT || config.server.port;
-app.listen(port, () => Logger.info(`started at port: ${port}`));
+app.listen(port, () => Logger.info(`Server started at port: ${port}`));
